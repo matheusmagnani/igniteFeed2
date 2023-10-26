@@ -1,5 +1,7 @@
 import { Header } from "./components/Header";
 import { Sidebar } from "./components/Sidebar"
+import { Post } from "./components/Post";
+
 
 import styles from "./App.module.css";
 import './global.css';
@@ -15,7 +17,8 @@ export function App() {
            <Sidebar/>
         </aside>
         <main>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro est necessitatibus hic quia, ex alias nisi saepe asperiores omnis! Quaerat, totam quasi consequatur minima magnam delectus eius officiis cum. Minus!
+          <Post/>
+          <Post/>
         </main>
       </div>
     </>
