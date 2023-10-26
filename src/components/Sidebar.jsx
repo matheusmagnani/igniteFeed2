@@ -1,5 +1,7 @@
 import styles from "./Sidebar.module.css";
 
+import { PencilLine } from 'phosphor-react'
+
 export function Sidebar() {
   return (
     <aside className={styles.sidebar}>
@@ -9,11 +11,14 @@ export function Sidebar() {
       />
 
       <div className={styles.profile}>
+        <img className={styles.avatar}src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ce209a1fea899b8346a8117da7c201dc~c5_100x100.jpeg?x-expires=1698501600&x-signature=ExKf2ZMAq4s8S0ZeNQJO%2BfnCnT8%3D" alt="" />
         <strong>Julia de Barcelos</strong>
         <span>Fotógrafa</span>
       </div>
       <footer>
-        <a href="#">Editar seu perfil </a>
+        <a href="#">
+          <PencilLine size={20}/>
+          Editar seu perfil </a>
       </footer>
     </aside>
   )
