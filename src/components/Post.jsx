@@ -52,7 +52,7 @@ export function Post({author, publishedAt, content}) {
           </div>
         </div>
 
-        <time dateTime={publishedDateFormatted}>{publishedDateRelativeToNow}</time>
+        <time dateTime={publishedDateFormatted}>Publicado há {publishedDateRelativeToNow}</time>
       </header>
       <div className={styles.content}>
         {
