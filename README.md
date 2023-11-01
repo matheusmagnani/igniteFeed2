@@ -36,4 +36,4 @@ Ignite Feed é um projeto de um feed simples onde cada usuário terá um perfil 
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK]([https://www.figma.com/file/X5noQSlS2XROjXUn7wthlX/DevLinks-%E2%80%A2?type=design&t=KJOLssUSIZQT8zzX-6](https://www.figma.com/file/4nPzRgZ3ba1cRSXUWAr2AG/Ignite-Feed-(Community)?type=design&t=wnQOWjKqZGdG5uZk-6)https://www.figma.com/file/4nPzRgZ3ba1cRSXUWAr2AG/Ignite-Feed-(Community)?type=design&t=wnQOWjKqZGdG5uZk-6). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/4nPzRgZ3ba1cRSXUWAr2AG/Ignite-Feed-(Community)?type=design&t=wnQOWjKqZGdG5uZk-6). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
