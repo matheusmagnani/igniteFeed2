@@ -1,37 +1,88 @@
+import { format, formatDistanceToNow} from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+import { useState } from 'react'
+
+import { Avatar } from './Avatar'
+import { Comment } from './Comment'
 import styles from './Post.module.css'
 
-export function Post() {
+
+
+export function Post({author, publishedAt, content}) {
+
+  const [comments, setComments] = useState([])
+
+  const [newCommentsChange, setNewCommentsChange] = useState("")
+
+  const publishedDateFormatted = format(publishedAt," d 'de' LLLL 'às' HH:mm'h'", {locale: ptBR})
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt,
+    {locale: ptBR})
+
+  function handleNewComment() {
+    event.preventDefault()
+
+    setComments([...comments, newCommentsChange])
+    
+    setNewCommentsChange("")
+  }  
+
+  function handleNewCommentChange() {
+    setNewCommentsChange(event.target.value)
+  }
+
+  function deleteComment(commentToDelete) {
+    const commentWithoutDeleteOne = comments.filter(comment =>{
+      return comment !== commentToDelete
+    })
+
+    setComments(commentWithoutDeleteOne)
+  }
+
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img className={styles.avatar} src="https://avatars.githubusercontent.com/u/102997685?v=4" alt="" />
+          <Avatar src={author.avatarURL} alt="" />
           <div className={styles.authorInfo}>
-            <strong>Matheus Magnani</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
-        <time dataTime="2023-10-26 11:50:00">Publicado há 1h</time>
+        <time dateTime={publishedDateFormatted}>{publishedDateRelativeToNow}</time>
       </header>
       <div className={styles.content}>
-          <p>Fala galeraa 👋</p>
-
-          <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-
-          
-
-          <a href="#">#novoprojeto #nlw #rocketseat</a>
+        {
+          content.map(line => {
+              return(
+                <p key={line.content}>{line.content}</p>
+              )
+          })
+        }
       </div>
-      <form className={styles.commentForm}>
+      <form onSubmit={handleNewComment} className={styles.commentForm}>
         <strong>Deixe seu comentário</strong>
         <textarea
           placeholder='Deixe um comentário'
+          onChange={handleNewCommentChange}
+          value={newCommentsChange}
         />
         <footer>
           <button type='submit'>Publicar</button>
         </footer>
       </form>
+      <div className={styles.commentList}>
+        {comments.map(comment => {
+            return (
+              <Comment 
+                onDeleteComment={deleteComment}
+                key={comment}
+                content={comment}/>
+            )
+        })}
+      </div>
       
     </article>
   )

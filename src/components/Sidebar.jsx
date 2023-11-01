@@ -1,3 +1,4 @@
+import { Avatar } from "./Avatar.jsx"
 import styles from "./Sidebar.module.css";
 
 import { PencilLine } from 'phosphor-react'
@@ -11,7 +12,7 @@ export function Sidebar() {
       />
 
       <div className={styles.profile}>
-        <img className={styles.avatar}src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/082ebb8cd9e9e4b48e21d12ebf1d15fc~c5_100x100.jpeg?x-expires=1698508800&x-signature=to7oSdOSvEh7PHAPUOY9hFAbkM4%3D" alt="" />
+      <Avatar src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/082ebb8cd9e9e4b48e21d12ebf1d15fc~c5_100x100.jpeg?x-expires=1698508800&x-signature=to7oSdOSvEh7PHAPUOY9hFAbkM4%3D" alt="" />
         <strong>Julia de Barcelos</strong>
         <span>Fotógrafa</span>
       </div>
