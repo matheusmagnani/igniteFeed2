@@ -84,7 +84,8 @@ export function Post({author, publishedAt, content}) {
               <Comment 
                 onDeleteComment={deleteComment}
                 key={comment}
-                content={comment}/>
+                content={comment}
+                publishedAt={new Date}/>
             )
         })}
       </div>
